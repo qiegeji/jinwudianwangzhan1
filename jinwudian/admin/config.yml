@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main # 你的仓库分支，是master就改成master
+media_folder: static/img
+public_folder: /static/img
+# 后续Netlify分配域名后替换此处site_domain
+site_domain: 你的站点名.netlify.app
+
+collections:
+  - name: articles
+    label: 文章管理
+    folder: content/articles
+    create: true
+    slug: "{{title}}"
+    fields:
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime"}
+      - {label: "分类", name: "category", widget: "select", options: ["广场舞资讯","活动通知","舞蹈教程"]}
+      - {label: "封面图", name: "cover", widget: "image", required: false}
+      - {label: "简介", name: "desc", widget: "text"}
+      - {label: "正文内容", name: "body", widget: "markdown"}
