@@ -1,10 +1,11 @@
 backend:
   name: git-gateway
-  branch: main # 你的仓库分支，是master就改成master
+  branch: main
+
 media_folder: static/img
 public_folder: /static/img
-# 后续Netlify分配域名后替换此处site_domain
-site_domain: 你的站点名.netlify.app
+
+site_domain: https://jolly-duckanoo-eca0ad.netlify.app
 
 collections:
   - name: articles
