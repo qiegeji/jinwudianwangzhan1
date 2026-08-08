@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="zh‑CN">
+<html lang="zh-CN">
 <head>
-  <meta charset="utf‑8">
-  <meta name="viewport" content="width=device‑width, initial‑scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>后台管理</title>
-  <!-- Decap CMS CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/decap‑cms@3/dist/decap‑cms.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/decap-cms@3/dist/decap-cms.js"></script>
 </head>
 <body>
-  <div id="nc‑root"></div>
+  <div id="nc-root"></div>
   <script>
-    // 等待DOM全部加载完成再初始化
     document.addEventListener('DOMContentLoaded', function () {
-      if(window.CMS) {
+      if(window.CMS){
         window.CMS.init();
       }
     });
