@@ -4,11 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>近舞点 - 文章管理后台</title>
-  <!-- Netlify登录弹窗必须引入 -->
+  <!-- Netlify 身份登录组件 -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <!-- Decap CMS核心脚本 -->
+  <!-- Decap CMS 核心 -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
+  <!-- CMS 会自动渲染到这里 -->
+  <script>
+    // 监听Netlify登录弹窗，登录成功后刷新CMS
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
