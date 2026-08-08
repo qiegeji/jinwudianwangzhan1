@@ -2,21 +2,16 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: static/img
-public_folder: /static/img
-
-site_domain: https://jolly-duckanoo-eca0ad.netlify.app
+media_folder: "static/uploads"
+public_folder: "/uploads"
 
 collections:
-  - name: articles
-    label: 文章管理
-    folder: content/articles
+  - name: "posts"
+    label: "文章"
+    folder: "content/posts"
     create: true
-    slug: "{{title}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "标题", name: "title", widget: "string"}
       - {label: "发布日期", name: "date", widget: "datetime"}
-      - {label: "分类", name: "category", widget: "select", options: ["广场舞资讯","活动通知","舞蹈教程"]}
-      - {label: "封面图", name: "cover", widget: "image", required: false}
-      - {label: "简介", name: "desc", widget: "text"}
-      - {label: "正文内容", name: "body", widget: "markdown"}
+      - {label: "正文", name: "body", widget: "markdown"}
